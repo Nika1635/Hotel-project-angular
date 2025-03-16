@@ -1,0 +1,273 @@
+#background-section {
+    background-image: url(https://hotelbooking.stepprojects.ge/images/slides/slide-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+}
+
+#background-section h1 {
+    font-size: 70px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#background-section h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#background-section button {
+    padding: 10px 20px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #75C5CF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#background-section button:hover {
+    background-color: #63b3bf;
+    transform: scale(1.05);
+}
+
+.guest-favourite {
+    margin-top: 70px;
+    color: #5E5E5E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.guest-favourite > h1 {
+
+    font-weight: 600;
+    font-size: 36px;
+    text-align: center;
+}
+
+.room-cards {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.room-card {
+    border: #dddddd 1px solid;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-card > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.cover-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    align-items: center;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.room-card > button {
+    background-color: #86D9E3;
+    color: white;
+    width: 100%;
+    height: 35px;
+    font-size: 20px;
+    font-weight: 700;
+    border: 0;
+    background-image: linear-gradient(#BBE9EF, #76C5CF);
+    cursor: pointer;
+}
+
+.room-card > button:hover {
+    background-color: #75C5CF;
+}
+
+.info-section{
+    margin-top: 70px;
+    color: #5E5E5E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1600px;
+    width: 100%;
+}
+
+.info-section > h1{
+    font-weight: 600;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.info-cards{
+    display: flex;
+    margin-bottom: 400px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.info-cards > div{
+    margin-top: 100px;
+    width: 200px;
+    text-align: center;
+}
+
+
+.info-cards > div > i{
+    color: #75C5CF;
+    font-size: 25px;
+    border: 1px #75C5CF solid;
+    padding: 40px;
+    border-radius: 100%;
+    transition: 0.5s;
+}
+
+.info-cards > div > h4{
+    font-size: 25px;
+    margin-block: 20px;
+}
+
+.info-cards > div > p{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.info-cards > div > a{
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #75C5CF;
+    transition: 0.3s;
+}
+
+.info-cards > div > a:hover{
+    color: #5E5E5E;
+}
+
+
+.info-cards > div > i:hover{
+    background-color: #75C5CF;
+    color: white;
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+@media (max-width: 1000px) {
+    .info-cards{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-cards > div{
+        width: 250px;
+    }
+}
+
+
+@media (max-width: 740px) {
+
+    #background-section button {
+        padding: 8px 18px;
+        font-size: 20px;
+
+    }
+
+    #background-section h1 {
+        font-size: 40px;
+    }
+
+    #background-section h2 {
+        font-size: 25px;
+    }
+
+    .room-card {
+
+        width: 100%;
+        max-width: 720px;
+    }
+
+    .room-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .room-card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    
+
+    .room-card {
+        max-width: 100%;
+    }
+
+    .guest-favourite > h1 {
+
+
+        font-size: 30px;
+
+    }
+
+    .info-section > h1{
+
+        font-size: 0px;
+
+    }
+
+    .info-cards > div > i{
+        color: #75C5CF;
+        font-size: 30px;
+        border: 1px #75C5CF solid;
+        padding: 40px;
+        border-radius: 100%;
+        transition: 0.5s;
+    }
+
+    .room-card > button {
+        height: 40px;
+        font-size: 23px;
+    }
+
+    .cover-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 19px;
+        align-items: center;
+        padding: 15px;
+        font-weight: 700;
+    }
+}

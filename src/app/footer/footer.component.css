@@ -1,0 +1,11 @@
+footer{
+    height: 100px;
+    background-color: #272727;
+}
+
+@media (max-width: 480px) {
+    footer{
+        height: 70px;
+    }
+
+}

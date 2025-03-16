@@ -1,1 +1,55 @@
-<p>home works!</p>
+<div id="hero-cont">
+    <section id="background-section" class="hero">
+        <div>
+            <h1>Five Star Hotels</h1>
+            <h2>And we like to keep it that way!</h2>
+            <button>Learn More</button>
+        </div>
+    </section>
+    <section class="guest-favourite">
+        <h1>Guest Favourite Rooms</h1>
+        <div class="room-cards">
+            @for (item of cards; track $index) {
+                <div class="room-card">
+                    <img [src]="item.images[0].source" alt="">
+                    <div class="cover-info">
+                        <p>{{item.name}}</p>
+                        <p class="price">€{{item.pricePerNight}}</p>
+                    </div>
+                    <button>Book Now</button>
+                </div>
+            }
+        </div>
+    </section>
+    <section class="info-section">
+        <h1>USP Section</h1>
+        <div class="info-cards">
+            <div>
+                <i class="fa-solid fa-martini-glass"></i>
+                <h4>Beverages included</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum.</p>
+                <a href="">Read More ></a>
+            </div>
+            <div>
+                <i class="fa-solid fa-credit-card"></i>
+                <h4>Stay First, Pay After!</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum.</p>
+                <a href="">Read More ></a>
+            </div>
+            <div>
+                <i class="fa-solid fa-utensils"></i>
+                <h4>24 Hour Restaurant</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum.</p>
+                <a href="">Read More ></a>
+            </div>
+            <div>
+                <i class="fa-solid fa-droplet"></i>
+                <h4>Spa Included!</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum.</p>
+                <a href="">Read More ></a>
+            </div>
+        </div>
+    </section>
+</div>
+
+
