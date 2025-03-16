@@ -1,0 +1,45 @@
+<div id="hero-cont">
+    <div class="filter-container">
+        <div id="roomtype-list">
+            <button class="all-roomtype" onclick="diplayall()">All</button>
+        </div>
+        <form id="filter">
+            <div class="range">
+                <p>Price Per Night</p>
+            </div> 
+            <div class="room-type">
+                <label for="roomTypeId">Room Type</label>
+                <select name="roomTypeId" id="roomtypeselect">
+                    <option selected="selected" disabled="disabled" value="Select a room">Select a room</option>
+                    <option value="1">Single Room</option>
+                    <option value="2">Double Room</option>
+                    <option value="3">Deluxe Room</option>
+                </select>
+            </div>
+
+            <div class="room-type">
+                <label for="checkIn">check-in</label>
+                <input type="date" name="checkIn" id="" value="" >
+            </div>
+
+            <div class="room-type">
+                <label for="checkOut">check-out</label>
+                <input type="date" name="checkOut" id="" value="" >
+            </div>
+            <div class="guest">
+                <label for="maximumGuests">Guests</label>
+                <select name="maximumGuests" id="roomtypeselect">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <input type="submit" name="" id="applyfilter">
+        </form>
+
+        
+    <div class="room-cards">
+    </div>
+</div>
