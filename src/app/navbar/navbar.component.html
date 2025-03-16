@@ -1,0 +1,13 @@
+<div id="hero-cont">
+    <div class="h-container">
+        <nav [ngClass]="{`none`: navbar}">
+            <ul id="navigation">
+                <li><button routerLink="/">Home</button></li>
+                <li><button routerLink="/rooms">Rooms</button></li>
+                <li><button routerLink="/hotels">Hotels</button></li>
+                <li><button routerLink="/booked">Booked Rooms</button></li>
+            </ul>
+        </nav>
+        <i class="fa-solid fa-bars burgerbar" (click)="navToggle()"></i>
+    </div>
+</div>
