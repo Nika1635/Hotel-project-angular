@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Carddetails } from '../interfaces/carddetails';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
