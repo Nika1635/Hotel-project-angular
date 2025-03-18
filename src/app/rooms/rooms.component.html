@@ -3,17 +3,17 @@
         <div id="roomtype-list">
             <button class="all-roomtype" onclick="diplayall()">All</button>
         </div>
-        <form id="filter">
+        <form id="filter" [formGroup]="form">
             <div class="range">
                 <label>Price Per Night</label>
                 <div class="range-child">
                     <div>
                         <label for="min" class="minmax">Minimum</label>
-                        <input type="number" name="min">
+                        <input type="number" formControlName = "priceFrom">
                     </div>
                     <div>
                         <label for="max" class="minmax">Maximum</label>
-                        <input type="number" name="checkOut">
+                        <input type="number" name="checkOut" formControlName = "priceTo">
                     </div>
                 </div>
             </div> 
@@ -46,7 +46,7 @@
                     <option>5</option>
                 </select>
             </div>
-            <input type="submit" name="" id="applyfilter">
+            <input type="submit" name="" id="applyfilter" (click)="submit()">
         </form>
 
         
