@@ -8,7 +8,11 @@ import { Carddetails } from './interfaces/carddetails';
 export class ApiService {
   constructor(private http: HttpClient) { }
 
-  getCardsById(id: number){
+  getRoomById(id: number){
     return this.http.get<Carddetails>(`https://hotelbooking.stepprojects.ge/api/Rooms/GetRoom/${id}`)
+  }
+
+  getAllRooms(){
+    return this.http.get<Carddetails[]>(`https://hotelbooking.stepprojects.ge/api/Rooms/GetAll`)
   }
 }

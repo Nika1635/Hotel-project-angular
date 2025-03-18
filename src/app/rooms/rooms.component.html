@@ -5,7 +5,17 @@
         </div>
         <form id="filter">
             <div class="range">
-                <p>Price Per Night</p>
+                <label>Price Per Night</label>
+                <div class="range-child">
+                    <div>
+                        <label for="min" class="minmax">Minimum</label>
+                        <input type="number" name="min">
+                    </div>
+                    <div>
+                        <label for="max" class="minmax">Maximum</label>
+                        <input type="number" name="checkOut">
+                    </div>
+                </div>
             </div> 
             <div class="room-type">
                 <label for="roomTypeId">Room Type</label>
@@ -41,5 +51,15 @@
 
         
     <div class="room-cards">
+        @for (item of rooms; track $index) {
+            <div class="room-card">
+                <img [src]="item.images[0].source" alt="">
+                <div class="cover-info">
+                    <p>{{item.name}}</p>
+                    <p class="price">€{{item.pricePerNight}}</p>
+                </div>
+                <button>Book Now</button>
+            </div>
+        }
     </div>
 </div>
