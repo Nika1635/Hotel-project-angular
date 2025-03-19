@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { Carddetails } from '../interfaces/carddetails';
+import { PostService } from '../post.service';
+import { error } from 'console';
+import { Roomtype } from '../interfaces/roomtype';
 
 @Component({
   selector: 'app-rooms',
@@ -10,10 +13,11 @@ import { Carddetails } from '../interfaces/carddetails';
   styleUrl: './rooms.component.css'
 })
 export class RoomsComponent implements OnInit {
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private post: PostService) { }
 
   ngOnInit(): void {
     this.getRooms()
+    this.getTypes()
   }
 
   public form: FormGroup = new FormGroup({
@@ -26,6 +30,13 @@ export class RoomsComponent implements OnInit {
   })
 
   rooms: Carddetails[] = []
+  types: Roomtype[] = []
+
+  getTypes(){
+    this.api.getRoomTypes().subscribe((data) => {
+      console.log(data)
+    })
+  }
 
   getRooms() {
     this.api.getAllRooms().subscribe((data) => {
@@ -35,6 +46,17 @@ export class RoomsComponent implements OnInit {
   }
 
   submit(){
+    this.post.filterRooms(this.form.value).subscribe({
+      next: (data: any) => {
+        this.rooms = data
+        console.log(data)
+      },
+      error: (errorr) => {
+        if(errorr.status == 400){
+          alert("Fill all input for filter")
+        }
+      }
+    })
     console.log(this.form)
   }
 }

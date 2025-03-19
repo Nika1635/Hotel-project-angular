@@ -3,7 +3,7 @@
         <div id="roomtype-list">
             <button class="all-roomtype" onclick="diplayall()">All</button>
         </div>
-        <form id="filter" [formGroup]="form">
+        <form id="filter" [formGroup]="form" (submit)="submit()">
             <div class="range">
                 <label>Price Per Night</label>
                 <div class="range-child">
@@ -19,34 +19,37 @@
             </div> 
             <div class="room-type">
                 <label for="roomTypeId">Room Type</label>
-                <select name="roomTypeId" id="roomtypeselect">
+                <select name="roomTypeId" id="roomtypeselect" formControlName = "roomTypeId">
                     <option selected="selected" disabled="disabled" value="Select a room">Select a room</option>
-                    <option value="1">Single Room</option>
-                    <option value="2">Double Room</option>
-                    <option value="3">Deluxe Room</option>
+                    <option [ngValue]="1">Single Room</option>
+                    <option [ngValue]="2">Double Room</option>
+                    <option [ngValue]="3">Deluxe Room</option>
                 </select>
             </div>
 
             <div class="room-type">
                 <label for="checkIn">check-in</label>
-                <input type="date" name="checkIn" id="" value="" >
+                <input type="date" name="checkIn" id="" value=""  formControlName = "checkIn">
             </div>
 
             <div class="room-type">
                 <label for="checkOut">check-out</label>
-                <input type="date" name="checkOut" id="" value="" >
+                <input type="date" name="checkOut" id="" value="" formControlName = "checkOut">
             </div>
             <div class="guest">
                 <label for="maximumGuests">Guests</label>
-                <select name="maximumGuests" id="roomtypeselect">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                <select name="maximumGuests" id="roomtypeselect" formControlName = "maximumGuests">
+                    <option [ngValue]="1">1</option>
+                    <option [ngValue]="2">2</option>
+                    <option [ngValue]="3">3</option>
+                    <option [ngValue]="4">4</option>
+                    <option [ngValue]="5">5</option>
                 </select>
             </div>
-            <input type="submit" name="" id="applyfilter" (click)="submit()">
+            <div class="submitdiv">  
+                <input type="submit" name="" class="applyfilter">
+                <input type="reset" value="Reset" class="applyfilter" (click)="getRooms()">
+            </div>
         </form>
 
         
