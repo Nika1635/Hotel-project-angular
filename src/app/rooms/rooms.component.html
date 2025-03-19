@@ -1,7 +1,10 @@
 <div id="hero-cont">
     <div class="filter-container">
         <div id="roomtype-list">
-            <button class="all-roomtype" onclick="diplayall()">All</button>
+            <button class="all-roomtype" (click)="getRooms()">All</button>
+            @for (item of types; track $index) {
+                <button class="roomtype" (click)="filterByType(item.id)">{{item.name}}</button>
+            }
         </div>
         <form id="filter" [formGroup]="form" (submit)="submit()">
             <div class="range">

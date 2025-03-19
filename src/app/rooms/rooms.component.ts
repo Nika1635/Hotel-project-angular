@@ -13,7 +13,8 @@ import { Roomtype } from '../interfaces/roomtype';
   styleUrl: './rooms.component.css'
 })
 export class RoomsComponent implements OnInit {
-  constructor(private api: ApiService, private post: PostService) { }
+  constructor(private api: ApiService, private post: PostService) {
+   }
 
   ngOnInit(): void {
     this.getRooms()
@@ -34,7 +35,7 @@ export class RoomsComponent implements OnInit {
 
   getTypes(){
     this.api.getRoomTypes().subscribe((data) => {
-      console.log(data)
+      this.types = data
     })
   }
 
@@ -42,6 +43,12 @@ export class RoomsComponent implements OnInit {
     this.api.getAllRooms().subscribe((data) => {
       this.rooms = data
       console.log(data)
+    })
+  }
+
+  filterByType(typeId: number) {
+    this.api.getAllRooms().subscribe((data) => {
+      this.rooms = data.filter(room => room.roomTypeId === typeId)
     })
   }
 
