@@ -5,7 +5,7 @@
             <i class="fa-solid fa-arrow-left" id="previous" (click)="prevPhoto()"></i>
             <i class="fa-solid fa-arrow-right" id="next" (click)="nextPhoto()"></i>
         </div>
-        <form id="book">
+        <form id="book" [formGroup]="form" (submit)="sendBookInfo()">
             <h1>Reservation</h1>
             <div id="roomPrice">
                 <p class="roomname">{{roominfo?.name}}</p>
@@ -13,23 +13,27 @@
             </div>
                 <div class="reservation-info">
                     <label for="checkInDate">check-in</label>
-                    <input type="date" name="checkInDate" id="checkInDate" value="" required>
+                    <input formControlName="checkInDate" (change)="timecalculate()" [(ngModel)]="checkInDate" type="date" name="checkInDate" id="checkInDate" value="" required>
                 </div>
                 <div class="reservation-info">
                     <label for="checkOutDate">check-out</label>
-                    <input type="date" name="checkOutDate" id="checkOutDate" value="" required>
+                    <input formControlName="checkOutDate" (change)="timecalculate()" [(ngModel)]="checkOutDate" type="date" name="checkOutDate" id="checkOutDate" value="" required>
                 </div>
                 <div class="reservation-info">
                     <label for="customerName">Customer Name</label>
-                    <input type="text" name="customerName" id="" value="" placeholder="Please enter your name" required>
+                    <input formControlName="customerName" type="text" name="customerName" id="" value="" placeholder="Please enter your name" required>
                 </div>
                 <div class="reservation-info">
                     <label for="customerPhone">Phone Number</label>
-                    <input type="number" name="customerPhone" id="" value="" placeholder="Please enter phone number" required>
+                    <input formControlName="customerPhone" type="text" name="customerPhone" id="" value="" placeholder="Please enter phone number" required>
                 </div>
                 <div id="roomTotal">
                     <p class="roomname">Total Price:</p>
-                    <p class="totalprice">€0</p>
+                    @if (price > 0) {
+                        <p class="totalprice">€{{price}}</p>
+                    } @else {
+                        <p class="totalprice">€0</p>
+                    }
                 </div>
                 <input type="submit" name="" id="bookingapply" value="Book Now">
         </form>
@@ -100,7 +104,7 @@
           </div>
     </section>
     <section id="other-rooms">
-        <h1>Other Rooms</h1>
+        <h1></h1>
         <div class="room-cards">
             
         </div>

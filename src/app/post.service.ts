@@ -10,4 +10,8 @@ export class PostService {
   filterRooms(data: any){
     return this.http.post("https://hotelbooking.stepprojects.ge/api/Rooms/GetFiltered", data)
   }
+
+  bookRoom(data: any){
+    return this.http.post("https://hotelbooking.stepprojects.ge/api/Booking", data)
+  }
 }
