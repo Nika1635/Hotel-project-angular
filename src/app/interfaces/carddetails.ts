@@ -11,13 +11,13 @@ export interface Carddetails {
             id: number,
             date: string,
             roomId: number
-        },
+        }
     ],
     images: [
         {
-            id: string,
+            id: number
             source: string,
-            roomId: string
+            roomId: number
         }
     ]
 }

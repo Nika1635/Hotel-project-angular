@@ -3,12 +3,12 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { ApiService } from '../api.service';
 import { Carddetails } from '../interfaces/carddetails';
 import { PostService } from '../post.service';
-import { error } from 'console';
 import { Roomtype } from '../interfaces/roomtype';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-rooms',
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, RouterModule],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.css'
 })
@@ -42,7 +42,6 @@ export class RoomsComponent implements OnInit {
   getRooms() {
     this.api.getAllRooms().subscribe((data) => {
       this.rooms = data
-      console.log(data)
     })
   }
 
@@ -56,7 +55,6 @@ export class RoomsComponent implements OnInit {
     this.post.filterRooms(this.form.value).subscribe({
       next: (data: any) => {
         this.rooms = data
-        console.log(data)
       },
       error: (errorr) => {
         if(errorr.status == 400){
@@ -64,6 +62,5 @@ export class RoomsComponent implements OnInit {
         }
       }
     })
-    console.log(this.form)
   }
 }

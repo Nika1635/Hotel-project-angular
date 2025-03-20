@@ -62,9 +62,9 @@
                 <img [src]="item.images[0].source" alt="">
                 <div class="cover-info">
                     <p>{{item.name}}</p>
-                    <p class="price">€{{item.pricePerNight}}</p>
+                    <p class="price" >€{{item.pricePerNight}}</p>
                 </div>
-                <button>Book Now</button>
+                <button routerLink="/details/{{item.id}}">Book Now</button>
             </div>
         }
     </div>

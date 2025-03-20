@@ -1,1 +1,108 @@
-<p>details works!</p>
+<div id="hero-cont">
+    <section id="roomInfo">
+        <div id="roomPhotos">
+            <img [src]="photoarry[photoIndex]?.source" alt="" id="photo">
+            <i class="fa-solid fa-arrow-left" id="previous" (click)="prevPhoto()"></i>
+            <i class="fa-solid fa-arrow-right" id="next" (click)="nextPhoto()"></i>
+        </div>
+        <form id="book">
+            <h1>Reservation</h1>
+            <div id="roomPrice">
+                <p class="roomname">{{roominfo?.name}}</p>
+                <p class="price">€{{roominfo?.pricePerNight}}<span>a night</span></p>
+            </div>
+                <div class="reservation-info">
+                    <label for="checkInDate">check-in</label>
+                    <input type="date" name="checkInDate" id="checkInDate" value="" required>
+                </div>
+                <div class="reservation-info">
+                    <label for="checkOutDate">check-out</label>
+                    <input type="date" name="checkOutDate" id="checkOutDate" value="" required>
+                </div>
+                <div class="reservation-info">
+                    <label for="customerName">Customer Name</label>
+                    <input type="text" name="customerName" id="" value="" placeholder="Please enter your name" required>
+                </div>
+                <div class="reservation-info">
+                    <label for="customerPhone">Phone Number</label>
+                    <input type="number" name="customerPhone" id="" value="" placeholder="Please enter phone number" required>
+                </div>
+                <div id="roomTotal">
+                    <p class="roomname">Total Price:</p>
+                    <p class="totalprice">€0</p>
+                </div>
+                <input type="submit" name="" id="bookingapply" value="Book Now">
+        </form>
+    </section>
+    <section class="information">
+        <div class="roomDetails">
+            <h1>Room Details</h1>
+            <div class="roomDetails-info">
+                <h3>Table overview</h3>
+                <table class="overview-table">
+                    <tbody>
+                        <tr>
+                            <td><i class="fa-solid fa-check check"></i>Double Bed</td>
+                            <td><i class="fa-solid fa-check check"></i>Double Bed</td>
+                            <td><i class="fa-solid fa-check check"></i>Free Newspaper</td>
+
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-check check"></i>60 square meter</td>
+                            <td><i class="fa-solid fa-check check"></i>Beach view</td>
+                            <td><i class="fa-solid fa-check check"></i>2 persons</td>
+
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-check check"></i>Double Bed</td>
+                            <td><i class="fa-solid fa-check check"></i>Free Internet</td>
+                            <td><i class="fa-solid fa-check check"></i>Breakfast included</td>
+
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-check check"></i>Private Balcony</td>
+                            <td><i class="fa-solid fa-check check"></i>Flat Screen TV</td>
+                            <td><i class="fa-solid fa-check check"></i>Jacuzzi</td>
+
+                        </tr>
+                    </tbody>   
+                </table>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula nibh, cursus id euismod non, scelerisque nec nibh. Nam semper, ligula a rhoncus fermentum, libero lacus vulputate felis, id auctor mauris urna quis diam.</p>
+            </div>
+        </div>
+        <div class="overview">
+            <h1>Overview</h1>
+            <div class="overview-info">
+              <ul class="tabs">
+                <li (click)="setActiveTab('home')" [ngClass]="{'active': activeTab === 'home'}" class="tab">Overview</li>
+                <li (click)="setActiveTab('pricing')" [ngClass]="{'active': activeTab === 'pricing'}" class="tab">Facilities</li>
+                <li (click)="setActiveTab('about')" [ngClass]="{'active': activeTab === 'about'}" class="tab">Extra</li>
+              </ul>
+          
+              <div class="tab-content">
+                <div id="home" [ngClass]="{'active': activeTab === 'home', 'disable': activeTab !== 'home'}">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum eleifend augue, quis rhoncus purus fermentum. In hendrerit risus arcu, in eleifend metus dapibus varius. Nulla dolor sapien, laoreet vel tincidunt non, egestas non justo. Phasellus et mattis lectus, et gravida urna.</p>
+                    <div>
+                        <img class="imagess" src="https://hotelbooking.stepprojects.ge/images/tab/restaurant-01.jpg" alt="">
+                        <p>pretium sem non tincidunt iaculis. Nunc at pharetra eros, a varius leo. Mauris id hendrerit justo. Mauris egestas magna vitae nisi ultricies semper. Nam vitae suscipit magna. Nam et felis nulla. Ut nec magna tortor. Nulla dolor sapien, laoreet vel tincidunt non, egestas non justo.</p>
+                    </div>
+                </div>  
+          
+                <div id="pricing" [ngClass]="{'active': activeTab === 'pricing', 'disable': activeTab !== 'pricing'}">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit illum obcaecati iure? Accusantium, sapiente. Totam, dolorem alias. Eos, voluptates facilis esse error eaque consectetur sint facere eum, culpa accusamus praesentium. Voluptatum commodi provident vel dolores sed facilis deleniti voluptate doloremque.</p>
+                </div>
+          
+                <div id="about" [ngClass]="{'active': activeTab === 'about', 'disable': activeTab !== 'about'}">
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est vero rerum et debitis saepe officia? Adipisci ea hic quidem, tempora doloremque recusandae nam unde nobis laboriosam, explicabo odio rerum molestiae. Harum voluptate asperiores totam voluptatum, iusto cum quisquam voluptates quo laudantium ab inventore repellat aspernatur nostrum voluptas, nam veritatis vitae.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <section id="other-rooms">
+        <h1>Other Rooms</h1>
+        <div class="room-cards">
+            
+        </div>
+    </section>
+</div>
