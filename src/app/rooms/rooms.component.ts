@@ -13,12 +13,12 @@ import { RouterModule } from '@angular/router';
   styleUrl: './rooms.component.css'
 })
 export class RoomsComponent implements OnInit {
-  constructor(private api: ApiService, private post: PostService) {
-   }
+  constructor(private api: ApiService, private post: PostService) {}
 
   ngOnInit(): void {
     this.getRooms()
     this.getTypes()
+    this.getHotelInfo()
   }
 
   public form: FormGroup = new FormGroup({
@@ -60,6 +60,15 @@ export class RoomsComponent implements OnInit {
         if(errorr.status == 400){
           alert("Fill all input for filter")
         }
+      }
+    })
+  }
+  
+  getHotelInfo() {
+    this.api.getAllRooms().subscribe((data) => {
+      if(Number(sessionStorage.getItem("hotelid")) > 0){
+        this.rooms = data.filter(room => room.hotelId ===  Number(sessionStorage.getItem("hotelid")))
+        sessionStorage.removeItem("hotelid")
       }
     })
   }

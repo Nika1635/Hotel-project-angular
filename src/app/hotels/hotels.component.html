@@ -1,1 +1,18 @@
-<p>hotels works!</p>
+<div id="hero-cont">
+    <div class="filter-container">
+        <div id="hoteltype-list">
+            <button class="all-hoteltype" (click)="getHotels()">All</button>
+        </div>
+        
+    <div class="hotel-cards">
+        @for (item of hotels; track $index) {
+            <div class="hotel-card">
+                <img [src]="item.featuredImage" alt="">
+                <div class="cover-info">
+                    <p>{{item.name}}</p>
+                </div>
+                <button (click)="sendInfo(item.id)" routerLink="/rooms"> View Rooms</button>
+            </div>
+        }
+    </div>
+</div>

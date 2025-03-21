@@ -2,72 +2,6 @@
     width: 100%;
 }
 
-.h-container {
-    max-width: 100%;
-    width: 100%;
-    display: flex;
-    margin: 0 auto;
-    padding: 0 20px;
-    height: 100px;
-    align-items: center;
-    box-shadow: 0 10px 10px -10px black;
-    margin-bottom: 30px;
-    
-}
-
-#hero-cont {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 50px;
-}
-
-#navigation {
-    list-style-type: none;
-    display: flex;
-    gap: 25px;
-    align-items: center;
-    padding: 0;
-    flex-wrap: wrap;
-}
-
-#navigation li {
-    display: flex;
-}
-
-#navigation button {
-    display: flex;
-    align-items: center;
-    background: transparent;
-    border: 0;
-    font-size: 20px;
-    transition: 0.3s;
-    font-weight: 700;
-    color: #5E5E5E;
-    padding: 10px 15px;
-    border-radius: 5px;
-}
-
-#navigation button:hover {
-    color: #75C5CF;
-    cursor: pointer;
-    background-color: rgba(117, 197, 207, 0.1);
-}
-
-nav {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.light{
-    color: #3ac7da;
-    cursor: pointer;
-    background-color: rgba(0, 212, 240, 0.1);
-}
-
 footer{
     height: 100px;
     background-color: #272727;
@@ -366,8 +300,6 @@ form input{
 }
 
 
-
-
 .tab {
   cursor: pointer;
   padding: 15px;
@@ -568,50 +500,5 @@ form input{
         width: 100%;
     }
 
-    .none{
-        display: none;
-        width: 100%;
-    }
-
-    .h-container{
-        width: 100%;
-        max-width: 1000px;
-        margin: 0;
-        padding: 0;    
-        height: 75px;
-    }
-
-    .h-container > i{
-        display: block;
-        position: absolute;
-        right: 40px;
-        font-size: 25px;
-    }
-
-    nav > ul{
-        display: flex;
-        flex-direction: column;
-        z-index: 20;
-        background-color: white;
-        width: 100%;
-        margin-top: 350px;
-        height: 300px;
-    }
-
     
-}
-
-@media (max-width: 480px) {
-    footer{
-        height: 70px;
-    }
-
-    #navigation button {
-        font-size: 25px;
-    }
-
-    nav > ul{
-
-        height: 300px;
-    }
 }
