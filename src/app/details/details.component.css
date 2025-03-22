@@ -2,19 +2,11 @@
     width: 100%;
 }
 
-footer{
-    height: 100px;
-    background-color: #272727;
-}
-
-.h-container > i{
-    display: none;
-}
-
 #roomInfo{
     display: flex;
     gap: 15px;
     max-width: 1200px;
+    margin-top: 40px;
 }
 
 

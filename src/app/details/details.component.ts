@@ -90,9 +90,7 @@ export class DetailsComponent implements OnInit {
       error: (errorr) => {
         if(errorr.statusText == "OK"){
           alert("Room Succesfuly Booked")
-          console.log(errorr)
         }else{
-          console.log(errorr)
           alert(errorr.error)
         }
       }

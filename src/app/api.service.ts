@@ -4,6 +4,7 @@ import { Carddetails } from './interfaces/carddetails';
 import { Roomtype } from './interfaces/roomtype';
 import { Hoteldetails } from './interfaces/hoteldetails';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { Bookedroom } from './interfaces/bookedroom';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class ApiService {
 
   getHotels(){
     return this.http.get<Hoteldetails[]>("https://hotelbooking.stepprojects.ge/api/Hotels/GetAll")
+  }
+
+  getBookedRooms(){
+    return this.http.get<Bookedroom[]>("https://hotelbooking.stepprojects.ge/api/Booking")
   }
 }

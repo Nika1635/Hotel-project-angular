@@ -14,4 +14,8 @@ export class PostService {
   bookRoom(data: any){
     return this.http.post("https://hotelbooking.stepprojects.ge/api/Booking", data)
   }
+
+  deleteRoom(id: number){
+    return this.http.delete(`https://hotelbooking.stepprojects.ge/api/Booking/${id}`)
+  }
 }

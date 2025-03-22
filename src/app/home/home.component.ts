@@ -21,9 +21,8 @@ export class HomeComponent implements OnInit{
   cardId(){
     for (let i = 1; i < 7; i++) {
       this.api.getRoomById(i).subscribe((data) => {
-        this.cards.push(data);
-      });
+        this.cards.push(data)
+      })
     }
-    console.log(this.cards)
   }
 }

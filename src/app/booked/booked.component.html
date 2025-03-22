@@ -1,1 +1,37 @@
-<p>booked works!</p>
+<div id="hero-cont">
+    <section class="bookings-cont">
+        <table>
+            <tbody>
+                <tr class="head-table">
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Check In</th>
+                    <th>Check Out</th>
+                    <th>Total Price</th>
+                    <th>Actions</th>
+                </tr>
+                <tr *ngFor="let item of booked;">
+                    <td>
+                        <p>Name: {{item.customerName}}</p>
+                        <p>Phone: {{item.customerPhone}}</p>
+                    </td>
+                    <td>
+                        <p>Booked</p>
+                    </td>
+                    <td>
+                        <p>{{item.checkInDate}}</p>
+                    </td>
+                    <td>
+                        <p>{{item.checkOutDate}}</p>
+                    </td>
+                    <td>                        
+                        <p>{{item.totalPrice}}€</p>
+                    </td>
+                    <td>
+                        <button (click)="deleteBooking(item.id, $event)">Cancel Booking</button>
+                    </td>
+                  </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
