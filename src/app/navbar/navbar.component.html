@@ -2,10 +2,10 @@
     <div class="h-container">
         <nav [ngClass]="{`none`: navbar}">
             <ul id="navigation">
-                <li><button routerLink="/">Home</button></li>
-                <li><button routerLink="/rooms">Rooms</button></li>
-                <li><button routerLink="/hotels">Hotels</button></li>
-                <li><button routerLink="/booked">Booked Rooms</button></li>
+                <li><button routerLink="/" (click)="this.navbar = true">Home</button></li>
+                <li><button routerLink="/rooms" (click)="this.navbar = true">Rooms</button></li>
+                <li><button routerLink="/hotels" (click)="this.navbar = true">Hotels</button></li>
+                <li><button routerLink="/booked" (click)="this.navbar = true">Booked Rooms</button></li>
             </ul>
         </nav>
         <i class="fa-solid fa-bars burgerbar" (click)="navToggle()"></i>
