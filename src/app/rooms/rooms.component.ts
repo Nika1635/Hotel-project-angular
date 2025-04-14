@@ -5,10 +5,11 @@ import { Carddetails } from '../interfaces/carddetails';
 import { PostService } from '../post.service';
 import { Roomtype } from '../interfaces/roomtype';
 import { RouterModule } from '@angular/router';
+import { FilterComponent } from '../filter/filter.component';
 
 @Component({
   selector: 'app-rooms',
-  imports: [FormsModule, ReactiveFormsModule, RouterModule],
+  imports: [FormsModule, ReactiveFormsModule, RouterModule, FilterComponent],
   templateUrl: './rooms.component.html',
   styleUrl: './rooms.component.css'
 })
@@ -20,15 +21,6 @@ export class RoomsComponent implements OnInit {
     this.getTypes()
     this.getHotelInfo()
   }
-
-  public form: FormGroup = new FormGroup({
-    roomTypeId: new FormControl(""),
-    priceFrom: new FormControl(""),
-    priceTo: new FormControl(""),
-    maximumGuests: new FormControl(""),
-    checkIn: new FormControl(""),
-    checkOut: new FormControl("")
-  })
 
   rooms: Carddetails[] = []
   types: Roomtype[] = []
@@ -51,8 +43,8 @@ export class RoomsComponent implements OnInit {
     })
   }
 
-  submit(){
-    this.post.filterRooms(this.form.value).subscribe({
+  submit(response: any){
+    this.post.filterRooms(response).subscribe({
       next: (data: any) => {
         this.rooms = data
       },
